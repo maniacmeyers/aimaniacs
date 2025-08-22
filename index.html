@@ -25,6 +25,104 @@
                 <span id="miles-count">85,210</span>
             </div>
         </div>
+
+        <!-- Enhanced Filter Controls -->
+        <div id="filter-panel">
+            <h2>Filter Contractors</h2>
+            <div class="filter-grid">
+                <!-- Text Search -->
+                <div class="filter-group">
+                    <label for="search-input">Search Business/City:</label>
+                    <input type="text" id="search-input" placeholder="Search by business name or city..." title="Search by business name or city">
+                </div>
+
+                <!-- Tier Filter with Color Badges -->
+                <div class="filter-group">
+                    <label for="tier-filter">Tier:</label>
+                    <div class="tier-badges" id="tier-filter">
+                        <button class="tier-badge active" data-tier="all">All</button>
+                        <button class="tier-badge tier-1" data-tier="1">Tier 1</button>
+                        <button class="tier-badge tier-2" data-tier="2">Tier 2</button>
+                        <button class="tier-badge tier-3" data-tier="3">Tier 3</button>
+                    </div>
+                </div>
+
+                <!-- State Filter with Searchable Dropdown -->
+                <div class="filter-group">
+                    <label for="state-filter">State:</label>
+                    <div class="searchable-select" id="state-filter">
+                        <input type="text" class="select-input" placeholder="Select state..." readonly>
+                        <div class="select-dropdown">
+                            <input type="text" class="search-box" placeholder="Search states...">
+                            <div class="options">
+                                <div class="option" data-value="all">All States</div>
+                                <div class="option" data-value="CA">California</div>
+                                <div class="option" data-value="TX">Texas</div>
+                                <div class="option" data-value="FL">Florida</div>
+                                <div class="option" data-value="NY">New York</div>
+                                <div class="option" data-value="IL">Illinois</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Type Filter with Searchable Dropdown -->
+                <div class="filter-group">
+                    <label for="service-filter">Service Type:</label>
+                    <div class="searchable-select" id="service-filter">
+                        <input type="text" class="select-input" placeholder="Select service type..." readonly>
+                        <div class="select-dropdown">
+                            <input type="text" class="search-box" placeholder="Search services...">
+                            <div class="options">
+                                <div class="option" data-value="all">All Services</div>
+                                <div class="option" data-value="trucking">Trucking</div>
+                                <div class="option" data-value="logistics">Logistics</div>
+                                <div class="option" data-value="delivery">Delivery</div>
+                                <div class="option" data-value="transport">Transport</div>
+                                <div class="option" data-value="cargo">Cargo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Distance Slider with Live Bubble and Presets -->
+                <div class="filter-group">
+                    <label for="distance-slider">Max Distance (miles):</label>
+                    <div class="slider-container">
+                        <input type="range" id="distance-slider" min="0" max="600" value="600" class="slider">
+                        <div class="slider-bubble" id="distance-bubble">600</div>
+                        <div class="slider-presets">
+                            <button class="preset-btn" data-value="50">50</button>
+                            <button class="preset-btn" data-value="100">100</button>
+                            <button class="preset-btn" data-value="200">200</button>
+                            <button class="preset-btn" data-value="300">300</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Slider with Ticks -->
+                <div class="filter-group">
+                    <label for="reviews-slider">Min Reviews:</label>
+                    <div class="slider-container">
+                        <input type="range" id="reviews-slider" min="0" max="30" value="0" class="slider" step="1">
+                        <div class="slider-ticks">
+                            <span>0</span>
+                            <span>10</span>
+                            <span>20</span>
+                            <span>30</span>
+                        </div>
+                        <div class="slider-bubble" id="reviews-bubble">0</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="filter-actions">
+                    <button id="clear-filters" class="action-btn clear-btn">Clear Filters</button>
+                    <button id="apply-filters" class="action-btn apply-btn">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+
         <div id="contractor-list">
             <h2>Contractor Directory</h2>
             <div id="contractors-table"></div>
